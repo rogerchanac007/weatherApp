@@ -1,0 +1,19 @@
+{
+  "name": "weatherapp",
+  "version": "0.0.1",
+  "description": "Un sistema de consola con node para obtener datos de una ubicacion solicitada al usuario",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerchanac007/weatherApp.git"
+  },
+  "author": "Roger Armando Chan Ac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rogerchanac007/weatherApp/issues"
+  },
+  "homepage": "https://github.com/rogerchanac007/weatherApp#readme"
+}
