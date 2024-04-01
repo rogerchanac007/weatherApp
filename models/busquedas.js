@@ -17,8 +17,8 @@ class Busqueda{
             }
         })
         const resp = await instancia.get()
-        console.log(resp.data)
-        return []
+        return resp.data.features
+        
     }
 }
 

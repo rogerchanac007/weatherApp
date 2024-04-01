@@ -91,13 +91,13 @@ const confirmCheck = async(tareas)=>{
 
 }
 
-const listarTareasABorrar = async (tareas = []) => {
+const listarLugares = async (lugares = []) => {
     
-    const choices = tareas.map((tarea, indice) => {
+    const choices = lugares.map((lugar, indice) => {
         indice += 1;
         return {
-            value: tarea.id,
-            name: `${indice} ${tarea._descripcion}`
+            value: lugar.id,
+            name: `${indice} ${lugar.place_name}`
         }
     });
 
@@ -105,7 +105,7 @@ const listarTareasABorrar = async (tareas = []) => {
         {
             type:"list",
             name:"id",
-            message:"Borrar",
+            message:"Seleccionar",
             choices
         }
     ]
@@ -131,7 +131,7 @@ module.exports = {
     inquirerInput,
     inquirerMenu,
     inquirerPausa,
-    listarTareasABorrar,
+    listarLugares,
     confirmar,
     confirmCheck
 }
