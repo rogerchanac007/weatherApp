@@ -1,6 +1,7 @@
 const {inquirerInput, inquirerMenu, inquirerPausa } = require("./helpers/inquirer")
 const Busqueda = require("./models/busquedas")
 require("colors")
+require("dotenv").config()
 const main = async ()=>{
     const busqueda = new Busqueda();
     let opcion;
