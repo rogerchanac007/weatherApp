@@ -20,6 +20,26 @@ class Busqueda{
         return resp.data.features
         
     }
+
+    async obtenerClima(lat="", long=""){
+        try{
+            const instancia = axios.create({
+                baseURL:"https://api.openweathermap.org/data/2.5/weather?",
+                params:{
+                    lat:lat,
+                    lon:long,
+                    appid:process.env.OPENWEATHER_KEY,
+                    units:"metric",
+                    lang:"es",
+                }
+            })
+            const resp = await instancia.get()
+            return resp.data
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
 }
 
 module.exports = Busqueda
