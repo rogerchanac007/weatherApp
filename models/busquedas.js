@@ -1,7 +1,9 @@
+const fs = require("fs")
 const axios = require("axios")
 
 class Busqueda{
     historial = []
+    dbpath = "./db/database.json"
 
     constructor(){
 
@@ -39,6 +41,28 @@ class Busqueda{
         catch(err){
             console.log(err)
         }
+    }
+
+    agregarHistorial(lugar=""){
+        if (this.historial.includes(lugar.toLocaleLowerCase())){
+            return;
+        }
+        this.historial.unshift(lugar.toLocaleLowerCase());
+        
+        //Grabar en db
+        this.guardarDB()
+    }
+
+    guardarDB(){
+        const payload = {
+            historial:this.historial,
+        }
+
+        fs.writeFileSync(this.dbpath, JSON.stringify(payload))
+    }
+
+    leerDB(){
+
     }
 }
 
