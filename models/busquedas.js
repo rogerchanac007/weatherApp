@@ -6,7 +6,7 @@ class Busqueda{
     dbpath = "./db/database.json"
 
     constructor(){
-
+        this.leerDB()
     }
 
     async obtenerCiudades(lugar=''){
@@ -62,7 +62,11 @@ class Busqueda{
     }
 
     leerDB(){
-
+        if(fs.existsSync(this.dbpath)){
+            const info = fs.readFileSync(this.dbpath, {encoding:"utf-8"});
+            const data = JSON.parse(info)
+            this.historial = data.historial
+        }
     }
 }
 
