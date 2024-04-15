@@ -9,6 +9,10 @@ class Busqueda{
         this.leerDB()
     }
 
+    get historialCapitalizado(){
+        
+    }
+
     async obtenerCiudades(lugar=''){
         const instancia = axios.create({
             baseURL: `https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
